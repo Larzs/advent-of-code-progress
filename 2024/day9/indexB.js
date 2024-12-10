@@ -1,6 +1,8 @@
 import { input } from './input.js';
 //import { input } from './test.js';
 
+const startTime = performance.now();
+
 let inputArray = [];
 let result = 0;
 let blockIterator = 0;
@@ -61,6 +63,9 @@ result = inputArray.reduce((acc, cur, index) => {
     return acc += cur.id !== '.' ? index * cur.id : 0
 }, 0);
 
+const endTime = performance.now();
+
 console.log(result);
+console.log(`Process took ${endTime - startTime} milliseconds`);
 
 // 6307653242596
